@@ -128,7 +128,12 @@ export const getTheme = (key, darkMode) => {
         components: {
             MuiTypography: {
                 defaultProps: {
-                    color: darkMode ? "#FFFFFF" : "#4d5156"
+                    fontFamily: 'Inter',
+                    fontWeight: '500',
+                    fontSize: '14px',
+                    lineHeight: '21px',
+                    color: "#111928",
+                    textAlign: 'start'
                 }
             },
             MuiList: {
@@ -374,6 +379,7 @@ export const getTheme = (key, darkMode) => {
             MuiLink: {
                 styleOverrides: {
                     root: {
+                        color: "blue",
                         fontFamily: "inherit",
                     },
                 }
