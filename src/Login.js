@@ -124,7 +124,9 @@ const LoginPage = () => {
                                         <Link to="/" style={{cursor: 'pointer'}}>Forgot password?</Link>
                                     </Typography>
                                 </Stack>
-                                <Button variant="contained" style={{backgroundColor: '#0056B5'}} fullWidth>
+                                <Button variant="contained" style={{backgroundColor: '#0056B5'}} onClick={() => {
+                                    navigate('/home')
+                                }} fullWidth>
                                     <Typography color={'white'}>Sign in</Typography>
                                 </Button>
                             </Stack>
