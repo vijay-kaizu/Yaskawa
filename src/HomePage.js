@@ -24,10 +24,49 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import HelpIcon from '@mui/icons-material/Help';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import {ModalDialog} from "./ModalDialog";
+import SearchOptions from "./SearchOptions";
+
+export const SelectWithAutoComplete = ({options, label}) => {
+    return (<Grid item xs={6}>
+            <TextField
+                size="small"
+                variant="outlined"
+                fullWidth
+                label={
+                    <Typography variant="body1" style={{
+                        fontFamily: 'Inter',
+                        fontSize: '14px',
+                        fontWeight: '400',
+                        lineHeight: '17px',
+                        color: "#6B7280"
+                    }}>
+                        {label}
+                    </Typography>
+                } select
+                InputProps={{
+                    sx: {
+                        borderRadius: "8px",
+                    }
+                }}
+                SelectProps={{
+                    IconComponent: KeyboardArrowDownIcon,
+                }}
+            >
+                {options.map(option => (
+                    <MenuItem key={option.key} value={option.key}>
+                        {option.label}
+                    </MenuItem>
+                ))}
+            </TextField>
+        </Grid>
+    )
+}
 
 
 const HomePage = () => {
     const [anchorEl, setAnchorEl] = useState(null);
+    const [searchFilter, setSearchFilter] = useState(false);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -88,7 +127,7 @@ const HomePage = () => {
                                     fontFamily: 'Inter',
                                     fontSize: '30px',
                                     fontWeight: '800',
-                                    lineClamp: "38px",
+                                    lineHeight: "38px",
                                     color: "#111928",
                                 }} textAlign={'left'}>
                                     {title}
@@ -149,7 +188,7 @@ const HomePage = () => {
                                 fontFamily: 'Inter',
                                 fontSize: '30px',
                                 fontWeight: '800',
-                                lineClamp: "38px",
+                                lineHeight: "38px",
                                 color: "#111928", mt: -1
                             }} variant={'h4'}
                                         textAlign={'left'}>{title}</Typography>
@@ -158,7 +197,7 @@ const HomePage = () => {
                                 fontSize: '18px',
                                 fontWeight: '400',
                                 color: "#6B7280",
-                                lineClamp: "27px"
+                                lineHeight: "27px"
                             }} textAlign={'left'}>{description}</Typography>
                         </CardContent>
                         <Button sx={{
@@ -180,41 +219,6 @@ const HomePage = () => {
                         </Button>
                     </React.Fragment>
                 </Card>
-            </Grid>
-        )
-    }
-    const SelectWithAutoComplete = ({options, label}) => {
-        return (<Grid item xs={6}>
-                <TextField
-                    size="small"
-                    variant="outlined"
-                    fullWidth
-                    label={
-                        <Typography variant="body1" style={{
-                            fontFamily: 'Inter',
-                            fontSize: '14px',
-                            fontWeight: '400',
-                            lineHeight: '17px',
-                            color: "#6B7280"
-                        }}>
-                            {label}
-                        </Typography>
-                    } select
-                    InputProps={{
-                        sx: {
-                            borderRadius: "8px",
-                        }
-                    }}
-                    SelectProps={{
-                        IconComponent: KeyboardArrowDownIcon,
-                    }}
-                >
-                    {options.map(option => (
-                        <MenuItem key={option.key} value={option.key}>
-                            {option.label}
-                        </MenuItem>
-                    ))}
-                </TextField>
             </Grid>
         )
     }
@@ -345,6 +349,9 @@ const HomePage = () => {
                                 borderStyle: 'solid',
                                 textTransform: 'none'
                             }}
+                            onClick={() => {
+                                setSearchFilter(true);
+                            }}
                             size={'small'}
                             startIcon={<FilterAlt sx={{
                                 height: "14px",
@@ -433,6 +440,12 @@ const HomePage = () => {
                     />
                 </Grid>
             </div>
+            <ModalDialog fullWidth={true} showModal={searchFilter} setShowModal={setSearchFilter}
+                /*
+                                         onClose={onCloseOverWriteModal}
+                */
+                         title={"Search Options"}
+                         content={<SearchOptions/>}/>
         </div>
     );
 };
