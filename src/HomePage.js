@@ -30,7 +30,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <AppBar position="static" sx={{bgcolor: 'white', height: "64px"}}>
+            <AppBar position="static" sx={{height: "64px"}}>
                 <Container maxWidth="100%">
                     <Toolbar disableGutters>
                         <Button sx={{p: 0}} onClick={handleClick}>
@@ -112,7 +112,6 @@ const HomePage = () => {
                         width: '109px',
                         padding: '2.5,5,2.5,5',
                         borderRadius: '3px',
-                        textTransform: 'none'
                     }}
                     variant={'contained'} size={'small'}>
                     <Typography sx={{height: '21px'}}>Search</Typography>
@@ -129,7 +128,6 @@ const HomePage = () => {
                         borderColor: "#E5E7EB",
                         borderWidth: '1px',
                         borderStyle: 'solid',
-                        textTransform: 'none'
                     }}
                     size={'small'}
                     startIcon={<FilterAlt/>}
@@ -148,7 +146,6 @@ const HomePage = () => {
                         borderColor: "#E5E7EB",
                         borderWidth: '1px',
                         borderStyle: 'solid',
-                        textTransform: 'none'
                     }}
                     size={'small'}
                     startIcon={<MicIcon/>}
@@ -250,7 +247,7 @@ const HomePage = () => {
                                 high velocity.
                                 Respond to changes and deliver great customer and employee service experiences
                                 fast.</Typography>
-                            <Button sx={{width: "150px", height: "24px", textTransform: "none"}}
+                            <Button sx={{width: "150px", height: "24px"}}
                                     endIcon={<ChevronRight/>}
                             >
                                 Learn more
@@ -272,7 +269,7 @@ const HomePage = () => {
                                 high velocity.
                                 Respond to changes and deliver great customer and employee service experiences
                                 fast.</Typography>
-                            <Button sx={{width: "150px", height: "24px", textTransform: "none"}}
+                            <Button sx={{width: "150px", height: "24px"}}
                                     endIcon={<ChevronRight/>}
                             >
                                 Learn more
@@ -329,7 +326,7 @@ const HomePage = () => {
                                         chronological order.
                                     </Typography>
                                     <Button variant={"contained"}
-                                            sx={{width: "150px", height: "41px", textTransform: "none"}}
+                                            sx={{width: "150px", height: "41px"}}
                                             endIcon={<ArrowRight/>}
                                     >
                                         Read more
@@ -367,7 +364,7 @@ const HomePage = () => {
                     </Grid>
                     <Grid item xs={3}>
                         <Card sx={{
-                            height: "433px",  borderColor: "#E5E7EB",
+                            height: "433px", borderColor: "#E5E7EB",
                             borderWidth: '1px',
                             borderStyle: 'solid',
                         }}>
@@ -388,7 +385,7 @@ const HomePage = () => {
                                         chronological order.
                                     </Typography>
                                     <Button variant={"contained"}
-                                            sx={{width: "150px", height: "41px", textTransform: "none"}}
+                                            sx={{width: "150px", height: "41px"}}
                                             endIcon={<ArrowRight/>}
                                     >
                                         Read more

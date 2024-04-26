@@ -1,6 +1,6 @@
 // MUI
 import {createTheme} from "@mui/material";
-import {blue, green, purple, orange, red, deepOrange, brown} from '@mui/material/colors';
+import {blue, green, purple, orange, red, deepOrange, brown, grey} from '@mui/material/colors';
 
 export const themeDef = {
     "kiku-blue": {
@@ -58,6 +58,17 @@ export const themeDef = {
         "selectedColor": brown["50"],
         "selectedColorDark": brown["900"],
     },
+    "kiku-grey": {
+        "primaryColor": grey["400"],
+        "primaryColor11": grey["50"],
+        "primaryColor22": grey["200"],
+        "primaryColor33": grey["300"],
+        "primaryColor66": grey["500"],
+        "sectionColor": grey["100"],
+        "scrollColor": grey["100"],
+        "selectedColor": grey["50"],
+        "selectedColorDark": grey["900"],
+    },
     /*
       "kiku-blue"   :      {"primaryColor": blue["500"],      "sectionColor": blue["100"],      "scrollColor":blue["100"],      "headerColor":blue["200"],      },
       "kiku-green"  :      {"primaryColor": green["600"],     "sectionColor": green["100"],     "scrollColor":green["100"],     "headerColor":green["200"],     },
@@ -111,7 +122,7 @@ export const getTheme = (key, darkMode) => {
         },
         mixins: {
             toolbar: {
-                minHeight: 42
+                minHeight: 64
             }
         },
         components: {
@@ -320,7 +331,8 @@ export const getTheme = (key, darkMode) => {
                             minHeight: "45px",
                             paddingLeft: "0px",
                             paddingRight: "4px",
-                            backgroundColor: themeDef[key].headerColor ? themeDef[key].headerColor : themeDef[key].primaryColor
+                            backgroundColor: "white"
+                            // themeDef[key].headerColor ? themeDef[key].headerColor : themeDef[key].primaryColor
                         },
                     },
                 }
